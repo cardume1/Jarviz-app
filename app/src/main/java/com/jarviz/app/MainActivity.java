@@ -352,7 +352,6 @@ public class MainActivity extends Activity {
             anim.setDuration(900);
             anim.setRepeatCount(ValueAnimator.INFINITE);
             anim.setInterpolator(new AccelerateDecelerateInterpolator());
-            anim.setTag(999);
             btnMic.setTag(anim);
             anim.start();
         } else {
