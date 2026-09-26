@@ -3,24 +3,129 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Jarviz</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101114;
+      color: #ffffff;
+    }
+
+    header {
+      padding: 18px;
+      text-align: center;
+      background: #181a20;
+      border-bottom: 1px solid #30323a;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #181a20;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      resize: vertical;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #383b45;
+      background: #0e0f12;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #777;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    button {
+      flex: 1;
+      padding: 13px;
+      border: 0;
+      border-radius: 10px;
+      background: #30343d;
+      color: white;
+      font-size: 16px;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .description {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
+
+<header>
   <h1>Jarviz</h1>
-  <h2>Base64</h2>
+</header>
 
-  <textarea id="encode" placeholder="Digite o texto aqui..."></textarea>
+<main>
 
-  <br><br>
+  <div class="card">
+    <h2>Assistente Jarviz</h2>
+    <p class="description">
+      Ferramentas do Jarviz diretamente no navegador.
+    </p>
 
-  <button type="button" id="bEncode">Codificar</button>
-  <button type="button" id="bDecode">Decodificar</button>
+    <textarea
+      id="encode"
+      placeholder="Digite ou cole o texto aqui..."
+    ></textarea>
 
-  <br><br>
+    <div class="buttons">
+      <button id="bEncode" type="button">
+        Codificar Base64
+      </button>
 
-  <textarea id="decode" placeholder="Resultado Base64..."></textarea>
+      <button id="bDecode" type="button">
+        Decodificar Base64
+      </button>
+    </div>
 
-  <script src="./main.js"></script>
+    <textarea
+      id="decode"
+      placeholder="Resultado..."
+    ></textarea>
+  </div>
+
+</main>
+
+<script src="./main.js"></script>
+
 </body>
 </html>
