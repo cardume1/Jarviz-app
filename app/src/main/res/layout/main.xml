@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0E0E16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jarviz"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <TextView android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="● Online"
+            android:textColor="#44dd66"
+            android:textSize="13sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#22222E"/>
+
+    <ScrollView android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout android:id="@+id/chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"/>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#161622"
+        android:padding="10dp">
+
+        <EditText android:id="@+id/campoMsg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Digite ou fale com o Jarviz..."
+            android:textColorHint="#8A8AA0"
+            android:background="@drawable/campo_texto"
+            android:textColor="#FFFFFF"
+            android:padding="14dp"
+            android:layout_marginEnd="8dp"/>
+
+        <Button android:id="@+id/btnMic"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:text="🎤"
+            android:textSize="20sp"
+            android:background="@drawable/botao_redondo"
+            android:layout_marginEnd="8dp"/>
+
+        <Button android:id="@+id/btnEnviar"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:text="➤"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/botao_redondo_enviar"/>
+    </LinearLayout>
+</LinearLayout>

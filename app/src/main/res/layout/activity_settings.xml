@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E0E16">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configurações do Jarviz"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chave da API Groq"
+        android:textColor="#B0B0C0"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText android:id="@+id/campoChave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="gsk_..."
+        android:textColorHint="#8A8AA0"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/campo_texto"
+        android:padding="14dp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="6dp"/>
+
+    <TextView android:id="@+id/linkGroq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5B9BFF"
+        android:textSize="12sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Como posso te chamar?"
+        android:textColor="#B0B0C0"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText android:id="@+id/campoNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Seu nome"
+        android:textColorHint="#8A8AA0"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/campo_texto"
+        android:padding="14dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personalidade do Jarviz"
+        android:textColor="#B0B0C0"
+        android:textSize="13sp"
+        android:layout_marginBottom="4dp"/>
+
+    <Spinner android:id="@+id/spinnerPersonalidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"/>
+
+    <Button android:id="@+id/btnSalvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/botao_redondo_enviar"
+        android:padding="14dp"/>
+
+</LinearLayout>
+</ScrollView>
