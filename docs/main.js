@@ -1,22 +1,31 @@
-// Atajos
+// Atalhos
 const $ = selector => document.querySelector(selector);
-const ael = (elem, ev, cb) => elem.addEventListener(ev, e => cb(e));
+const ael = (elem, ev, cb) => elem.addEventListener(ev, cb);
 
-// Métodos nativos expuestos mediante una interfaz
-const vibrate = ms => Android.Vibrate(ms);
+// Vibração: Android quando estiver no APK,
+// navegador quando estiver no GitHub Pages.
+const vibrate = ms => {
+    if (typeof Android !== "undefined" && Android.Vibrate) {
+        Android.Vibrate(ms);
+    } else if (navigator.vibrate) {
+        navigator.vibrate(ms);
+    }
+};
 
-// Codigo De La Web:
+// Elementos da página
 const textareaEncode = $("#encode");
 const textareaDecode = $("#decode");
 const buttonTextareaEncode = $("#bEncode");
 const buttonTextareaDecode = $("#bDecode");
 
+// Codificar
 ael(buttonTextareaEncode, "click", () => {
-  vibrate(500);
-  textareaDecode.value = btoa(textareaEncode.value);
+    vibrate(500);
+    textareaDecode.value = btoa(textareaEncode.value);
 });
 
+// Decodificar
 ael(buttonTextareaDecode, "click", () => {
-  vibrate(250);
-  textareaEncode.value = atob(textareaDecode.value);
+    vibrate(250);
+    textareaEncode.value = atob(textareaDecode.value);
 });
