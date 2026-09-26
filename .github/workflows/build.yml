@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Baixar código
         uses: actions/checkout@v4
@@ -14,27 +15,30 @@ jobs:
       - name: Instalar Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
+          distribution: temurin
           java-version: '17'
 
-      - name: Instalar Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Configurar Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          sdkmanager --version
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Instalar Gradle
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip
-          unzip -q gradle-8.4-bin.zip -d $HOME
-          echo "$HOME/gradle-8.4/bin" >> $GITHUB_PATH
+          unzip -q gradle-8.4-bin.zip -d "$HOME"
+          echo "$HOME/gradle-8.4/bin" >> "$GITHUB_PATH"
 
       - name: Verificar projeto
         run: |
           test -f gradle.properties
           grep -n "android.useAndroidX" gradle.properties
 
-      - name: Compilar APK (debug)
+      - name: Compilar APK
         run: gradle assembleDebug --stacktrace
 
-      - name: Publicar APK como artefato
+      - name: Publicar APK
         uses: actions/upload-artifact@v4
         with:
           name: jarviz-apk
