@@ -36,6 +36,30 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.main);
+
+        // Botão de Configurações
+        android.widget.Button btnConfig = new android.widget.Button(this);
+        btnConfig.setText("⚙️");
+        btnConfig.setTextSize(22);
+        btnConfig.setContentDescription("Configurações");
+        btnConfig.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class)));
+
+        android.widget.FrameLayout raiz =
+                (android.widget.FrameLayout) findViewById(android.R.id.content);
+
+        android.widget.FrameLayout.LayoutParams configParams =
+                new android.widget.FrameLayout.LayoutParams(
+                        android.widget.FrameLayout.LayoutParams.WRAP_CONTENT,
+                        android.widget.FrameLayout.LayoutParams.WRAP_CONTENT);
+
+        configParams.gravity =
+                android.view.Gravity.TOP | android.view.Gravity.RIGHT;
+        configParams.topMargin = 20;
+        configParams.rightMargin = 8;
+
+        raiz.addView(btnConfig, configParams);
+
         chat = findViewById(R.id.chat);
         scroll = findViewById(R.id.scroll);
         status = findViewById(R.id.status);
