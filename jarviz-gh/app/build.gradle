@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.jarviz.app'
+    compileSdkVersion 33
+    buildToolsVersion "34.0.0"
+
+    defaultConfig {
+        applicationId "com.jarviz.app"
+        minSdkVersion 23
+        targetSdkVersion 33
+        versionCode 3
+        versionName "3.0-god"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}

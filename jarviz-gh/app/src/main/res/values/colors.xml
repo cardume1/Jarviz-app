@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fundo">#0E0E16</color>
+    <color name="bolhaUsuario">#3A5AFF</color>
+    <color name="bolhaIA">#1F1F2E</color>
+    <color name="verdeOnline">#44dd66</color>
+</resources>
